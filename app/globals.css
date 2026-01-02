@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply antialiased;
+  background-color: var(--page-bg, #f9f6f0);
+  color: #2f2417;
+}
+
+main {
+  min-height: 70vh;
+}
+
+a {
+  @apply transition-colors;
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-6xl px-6;
+}
+
+.card {
+  @apply rounded-2xl border border-ink-100 bg-white p-6 shadow-soft;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full border border-ink-100 bg-white px-3 py-1 text-xs font-medium uppercase tracking-wide text-ink-600;
+}
+
+.input {
+  @apply w-full rounded-lg border border-ink-200 bg-white px-3 py-2 text-sm text-ink-900 shadow-sm focus:border-ink-400 focus:outline-none;
+}
+
+.textarea {
+  @apply w-full rounded-lg border border-ink-200 bg-white px-3 py-2 text-sm text-ink-900 shadow-sm focus:border-ink-400 focus:outline-none;
+}
+
+.button {
+  @apply inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold transition;
+  background-color: var(--accent, #f26a21);
+  color: var(--accent-text, #ffffff);
+}
+
+.button-outline {
+  @apply inline-flex items-center justify-center rounded-full border px-5 py-2 text-sm font-semibold transition;
+  border-color: var(--accent, #f26a21);
+  color: var(--accent, #f26a21);
+  background-color: transparent;
+}
+
+.button-ghost {
+  @apply inline-flex items-center justify-center rounded-full border border-transparent bg-transparent px-3 py-2 text-sm font-medium transition;
+  color: var(--header-text, #3b2a1a);
+}
+
+.pill {
+  @apply inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold;
+  background-color: var(--pill-bg, #ffe4b4);
+  color: var(--pill-text, #3b2a1a);
+}
+
+.pill-active {
+  background-color: var(--pill-active-bg, #f26a21);
+  color: var(--pill-active-text, #ffffff);
+}
+
+.nav-pill {
+  @apply inline-flex items-center justify-center rounded-xl px-6 py-2.5 text-base font-semibold transition;
+  background-color: var(--accent, #f26a21);
+  color: var(--accent-text, #ffffff);
+}
+
+.nav-link {
+  @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold transition;
+  color: var(--header-text, #3b2a1a);
+}
+
+.nav-dropdown {
+  @apply relative;
+}
+
+.nav-dropdown-panel {
+  @apply absolute left-0 top-full z-20 mt-0 hidden min-w-48 rounded-xl p-2 shadow-soft;
+  background-color: var(--accent, #f26a21);
+  color: var(--accent-text, #ffffff);
+}
+
+.nav-dropdown-panel-right {
+  @apply right-0 left-auto;
+}
+
+.nav-dropdown-item {
+  @apply block rounded-lg px-4 py-2 text-sm font-semibold transition;
+  color: var(--accent-text, #ffffff);
+}
+
+.nav-dropdown-item:hover,
+.nav-dropdown-item:focus-visible {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.nav-dropdown-item-active {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.menu-section {
+  @apply space-y-6;
+}
+
+.menu-section-heading {
+  @apply space-y-3 text-center;
+}
+
+.menu-section-title {
+  @apply font-serif text-3xl text-ink-900;
+}
+
+.menu-grid {
+  @apply grid gap-8 md:grid-cols-2;
+}
+
+.menu-item {
+  @apply flex flex-col gap-4 md:flex-row md:items-start;
+}
+
+.menu-item-media {
+  @apply h-28 w-28 rounded-2xl object-cover;
+}
+
+.menu-item-placeholder {
+  @apply flex h-28 w-28 items-center justify-center rounded-2xl border border-ink-100 bg-ink-50 text-xs text-ink-400;
+}
+
+.menu-item-title {
+  @apply text-lg font-semibold text-ink-900;
+}
+
+.menu-item-desc {
+  @apply text-sm text-ink-600;
+}
+
+.menu-item-price {
+  @apply text-base font-semibold;
+  color: var(--accent, #f26a21);
+}
+
+.order-pill {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-semibold transition;
+}
+
+.order-cta {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition;
+}
+
+.order-pill-logo {
+  @apply inline-flex h-4 w-4 items-center justify-center rounded-full bg-white text-[9px] font-bold;
+  color: #ff2d55;
+}
+
+.order-cta .order-pill-logo {
+  @apply h-5 w-5 text-[10px];
+}
+
+.order-pill-rappi,
+.order-cta-rappi {
+  background-color: #ff5c00;
+  color: #ffffff;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.order-pill-pedidosya,
+.order-cta-pedidosya {
+  background-color: #ff2d55;
+  color: #ffffff;
+}
+
+.order-pill-outline {
+  @apply inline-flex items-center justify-center rounded-full border px-4 py-1.5 text-xs font-semibold transition;
+  border-color: var(--accent, #f26a21);
+  color: var(--accent, #f26a21);
+  background-color: transparent;
+}
+
+.footer-title {
+  @apply text-lg font-semibold tracking-wide;
+}
+
+.footer-title-block {
+  @apply inline-flex flex-col items-start;
+}
+
+.footer-divider {
+  @apply mt-2 h-px w-12;
+  background-color: currentColor;
+  opacity: 0.35;
+}
+
+.footer-title-block .footer-divider {
+  width: 100%;
+}
+
+.footer-list {
+  @apply flex flex-col gap-2 pl-4;
+  list-style: disc;
+}
+
+.footer-link {
+  @apply text-lg leading-snug transition-colors;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--accent, #ee7721);
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid var(--accent, #ee7721);
+  outline-offset: 3px;
+  border-radius: 9999px;
+}
+
+.reclamaciones-logo {
+  width: 260px;
+  height: 104px;
+  flex-shrink: 0;
+}
+
+.reclamaciones-logo-img {
+  width: 320px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .reclamaciones-logo {
+    width: 300px;
+    height: 120px;
+  }
+
+  .reclamaciones-logo-img {
+    width: 360px;
+  }
+}
+
+.footer-reclamaciones:hover .reclamaciones-logo,
+.footer-reclamaciones:focus-visible .reclamaciones-logo {
+  opacity: 0.85;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease both;
+}
+
+.animate-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-2 {
+  animation-delay: 0.2s;
+}
