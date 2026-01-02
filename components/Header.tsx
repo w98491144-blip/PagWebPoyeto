@@ -91,42 +91,34 @@ const Header = ({
   return (
     <header className="shadow-sm">
       {settings.top_bar_text && (
-        <div
-          className="text-center text-xs font-semibold tracking-wide md:text-sm"
-          style={{
-            backgroundColor: "#3b2a1a",
-            color: "#ffffff"
-          }}
-        >
+        <div className="site-topbar text-center text-xs font-semibold tracking-wide md:text-sm">
           <div className="container-shell py-1.5">{renderTopBarText()}</div>
         </div>
       )}
-      <div
-        className="border-b border-ink-100"
-        style={{ backgroundColor: "var(--header-bg)" }}
-      >
-        <div className="container-shell flex flex-col gap-6 py-2.5 md:flex-row md:items-center md:justify-between md:py-3">
-          <Link href="/" className="flex items-center gap-4">
+      <div className="site-header-band border-b border-ink-100">
+        <div className="container-shell flex flex-col gap-4 py-3 md:flex-row md:items-center md:justify-between md:py-4">
+          <Link href="/" className="flex items-center gap-3">
             {settings.logo_url ? (
               <Image
                 src={settings.logo_url}
                 alt={settings.brand_name ?? "Logo"}
-                width={160}
-                height={48}
-                className="h-12 w-auto"
-                style={{ transform: "scale(3)", transformOrigin: "left center" }}
+                width={180}
+                height={56}
+                className="h-12 w-auto drop-shadow-md md:h-14"
                 unoptimized
               />
             ) : (
-              <div
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white"
-                style={{ transform: "scale(3)", transformOrigin: "left center" }}
-              >
-                <span className="font-serif text-xl">R</span>
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/70 bg-white/90 shadow-sm">
+                <span className="font-serif text-xl text-ink-900">R</span>
               </div>
             )}
+            {!settings.logo_url && (
+              <span className="hidden text-lg font-semibold md:inline">
+                {settings.brand_name ?? "Restaurante"}
+              </span>
+            )}
           </Link>
-          <nav className="flex flex-wrap items-center gap-3">
+          <nav className="flex flex-wrap items-center gap-2 md:gap-3">
             <div className="nav-dropdown group">
               <Link
                 href="/categorias"

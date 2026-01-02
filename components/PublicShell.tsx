@@ -32,7 +32,9 @@ const PublicShell = ({
       />
       <RealtimeSync />
       <Header settings={settings} categories={categories} />
-      <main className="container-shell pb-12 pt-4">{children}</main>
+      <main className="site-main-band">
+        <div className="container-shell pb-12 pt-4">{children}</div>
+      </main>
       <Footer settings={settings} />
     </>
   );

@@ -16,15 +16,19 @@ const CategoryHeroGrid = ({ categories }: { categories: Category[] }) => {
 
   return (
     <section className="grid gap-6 md:grid-cols-2">
-      {categories.map((category) => {
-        const fallbackColor = category.color_hex ?? "#f2e8d9";
+      {categories.map((category, index) => {
+        const fallbackColor = category.color_hex ?? "#f4eadc";
+        const delay = Math.min(index, 6) * 0.08;
 
         return (
           <Link
             key={category.id}
             href={`/categorias#${category.slug}`}
-            className="group relative overflow-hidden rounded-3xl shadow-soft"
-            style={{ backgroundColor: fallbackColor }}
+            className="group category-hero-card min-h-[180px] md:min-h-[210px] animate-fade-up"
+            style={{
+              backgroundColor: fallbackColor,
+              animationDelay: `${delay}s`
+            }}
             onClick={() =>
               trackEvent("click_category", {
                 category_name: category.name,
@@ -33,25 +37,24 @@ const CategoryHeroGrid = ({ categories }: { categories: Category[] }) => {
               })
             }
           >
-            {category.image_url ? (
-              <div className="relative h-44 w-full md:h-52">
-                <Image
-                  src={category.image_url}
-                  alt={category.name}
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105 group-active:scale-105 group-focus-visible:scale-105"
-                  unoptimized
-                />
-              </div>
-            ) : (
-              <div className="h-44 w-full md:h-52" />
+            {category.image_url && (
+              <Image
+                src={category.image_url}
+                alt={category.name}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="category-hero-card-media"
+                unoptimized
+              />
             )}
-            <div className="absolute inset-0 bg-black/20" />
-            <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
-              <p className="text-2xl font-semibold text-white drop-shadow-sm">
-                {category.name}
-              </p>
+            <div className="category-hero-card-overlay" />
+            <div className="category-hero-card-glow" />
+            <div className="category-hero-card-content">
+              <span className="category-hero-card-kicker">Categoria</span>
+              <div className="space-y-2">
+                <p className="category-hero-card-title">{category.name}</p>
+                <span className="category-hero-card-cta">Ver menu</span>
+              </div>
             </div>
           </Link>
         );

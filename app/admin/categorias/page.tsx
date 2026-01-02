@@ -280,7 +280,7 @@ export default function AdminCategoriasPage() {
               <input
                 className="input"
                 name="color_hex"
-                placeholder="#0c5447"
+                placeholder="#60933a"
                 value={form.color_hex}
                 onChange={handleChange}
               />
@@ -290,7 +290,7 @@ export default function AdminCategoriasPage() {
               <input
                 className="input"
                 name="text_color"
-                placeholder="#fee8d2"
+                placeholder="#f4eadc"
                 value={form.text_color}
                 onChange={handleChange}
               />

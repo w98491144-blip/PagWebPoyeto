@@ -37,9 +37,6 @@ const Footer = ({ settings }: { settings: SiteSettings }) => {
     { label: "TikTok", url: settings.tiktok_url },
     { label: "WhatsApp", url: settings.whatsapp_url }
   ].filter((item) => item.url);
-  const accent = settings.accent_color ?? "#ee7721";
-  const footerSurface = settings.header_bg ?? "#0c5447";
-  const footerText = "#fee8d2";
   const bookLogoUrl = settings.libro_reclamaciones_logo_url;
   const contactEmail = settings.contact_email
     ? `mailto:${settings.contact_email}`
@@ -54,10 +51,10 @@ const Footer = ({ settings }: { settings: SiteSettings }) => {
 
   return (
     <footer>
-      <div className="h-2 md:h-3" style={{ backgroundColor: accent }} />
-      <div style={{ backgroundColor: footerSurface, color: footerText }}>
+      <div className="footer-ribbon" />
+      <div className="site-footer-band">
         <div className="container-shell grid gap-8 py-8 md:grid-cols-[2fr_1fr_0.9fr] md:gap-6 md:py-10">
-          <div className="space-y-3 md:-ml-16 md:-mt-12 md:self-start">
+          <div className="space-y-3 md:self-start">
             <Link href="/" aria-label="Ir al inicio" className="inline-flex">
               {settings.footer_logo_url || settings.logo_url ? (
                 <Image
@@ -65,17 +62,17 @@ const Footer = ({ settings }: { settings: SiteSettings }) => {
                   alt={settings.brand_name ?? "Logo"}
                   width={512}
                   height={512}
-                  className="h-96 w-auto md:h-[28rem]"
+                  className="h-40 w-auto md:h-56"
                   unoptimized
                 />
               ) : (
-                <p className="font-serif text-5xl md:text-6xl">
+                <p className="font-serif text-4xl md:text-5xl">
                   {settings.brand_name ?? "Restaurante"}
                 </p>
               )}
             </Link>
           </div>
-          <div className="space-y-3 text-lg md:justify-self-start md:-ml-6 md:mt-6 md:self-start">
+          <div className="space-y-3 text-base md:justify-self-start md:mt-4 md:self-start">
             <div className="footer-title-block">
               <p className="footer-title">Conócenos</p>
               <div className="footer-divider" />
@@ -100,7 +97,7 @@ const Footer = ({ settings }: { settings: SiteSettings }) => {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col gap-2 text-lg md:items-center md:text-center md:justify-self-end md:mt-6 md:-mr-4 md:self-start">
+          <div className="flex flex-col gap-2 text-base md:items-center md:text-center md:justify-self-end md:mt-4 md:self-start">
             <div className="footer-title-block md:items-center">
               <p className="footer-title">Redes sociales</p>
               <div className="footer-divider" />

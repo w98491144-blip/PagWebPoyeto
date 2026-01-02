@@ -6,7 +6,7 @@ import ImageUploader from "@/components/ImageUploader";
 import { createSupabaseBrowserClient } from "@/lib/supabaseClient";
 import type { SiteSettings } from "@/lib/types";
 
-const accentDefault = "#ee7721";
+const accentDefault = "#d82739";
 
 const defaultForm: SiteSettings = {
   id: "",
@@ -28,19 +28,19 @@ const defaultForm: SiteSettings = {
   footer_logo_url: "",
   libro_reclamaciones_logo_url: "",
   top_bar_text: "",
-  top_bar_bg: "#3b2a1a",
-  top_bar_text_color: "#ffffff",
-  header_bg: "#0c5447",
-  header_text_color: "#fee8d2",
-  page_bg: "#fee8d2",
+  top_bar_bg: "#d82739",
+  top_bar_text_color: "#f4eadc",
+  header_bg: "#60933a",
+  header_text_color: "#f4eadc",
+  page_bg: "#f4eadc",
   accent_color: accentDefault,
-  accent_text_color: "#ffffff",
-  pill_bg: "#fee8d2",
-  pill_text_color: "#0c5447",
+  accent_text_color: "#f4eadc",
+  pill_bg: "#f4eadc",
+  pill_text_color: "#60933a",
   pill_active_bg: accentDefault,
-  pill_active_text_color: "#ffffff",
-  footer_bg: "#ee7721",
-  footer_text_color: "#ffffff",
+  pill_active_text_color: "#f4eadc",
+  footer_bg: "#d82739",
+  footer_text_color: "#f4eadc",
   updated_at: null
 };
 
@@ -69,7 +69,7 @@ const getTextColor = (hex: string) => {
   const g = parseInt(cleaned.slice(2, 4), 16);
   const b = parseInt(cleaned.slice(4, 6), 16);
   const luminance = (r * 299 + g * 587 + b * 114) / 1000;
-  return luminance > 150 ? "#2f2417" : "#ffffff";
+  return luminance > 150 ? "#2f2417" : "#f4eadc";
 };
 
 export default function AdminAparienciaPage() {
@@ -161,11 +161,11 @@ export default function AdminAparienciaPage() {
     setLoading(true);
     setError(null);
 
-    const topBarBg = "#3b2a1a";
-    const topBarText = "#ffffff";
-    const topBg = normalizeHex(palette.top_bg, defaultForm.header_bg ?? "#0c5447");
-    const middleBg = normalizeHex(palette.middle_bg, defaultForm.page_bg ?? "#fee8d2");
-    const bottomBg = normalizeHex(palette.bottom_bg, defaultForm.footer_bg ?? "#ee7721");
+    const topBarBg = "#d82739";
+    const topBarText = "#f4eadc";
+    const topBg = normalizeHex(palette.top_bg, defaultForm.header_bg ?? "#60933a");
+    const middleBg = normalizeHex(palette.middle_bg, defaultForm.page_bg ?? "#f4eadc");
+    const bottomBg = normalizeHex(palette.bottom_bg, defaultForm.footer_bg ?? "#d82739");
     const topText = getTextColor(topBg);
     const bottomText = getTextColor(bottomBg);
     const accentText = getTextColor(accentDefault);
@@ -455,7 +455,7 @@ export default function AdminAparienciaPage() {
                 name="top_bg"
                 value={palette.top_bg}
                 onChange={handlePaletteChange}
-                placeholder="#0c5447"
+                placeholder="#60933a"
               />
             </div>
             <div>
@@ -465,7 +465,7 @@ export default function AdminAparienciaPage() {
                 name="middle_bg"
                 value={palette.middle_bg}
                 onChange={handlePaletteChange}
-                placeholder="#fee8d2"
+                placeholder="#f4eadc"
               />
             </div>
             <div>
@@ -475,7 +475,7 @@ export default function AdminAparienciaPage() {
                 name="bottom_bg"
                 value={palette.bottom_bg}
                 onChange={handlePaletteChange}
-                placeholder="#f3e5cf"
+                placeholder="#d82739"
               />
             </div>
           </div>

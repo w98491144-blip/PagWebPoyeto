@@ -47,19 +47,19 @@ export default async function RootLayout({
     getActiveCategories()
   ]);
   const themeStyle: CSSProperties & CSSVars = {
-    "--page-bg": settings.page_bg ?? "#fee8d2",
-    "--header-bg": settings.header_bg ?? "#0c5447",
-    "--header-text": settings.header_text_color ?? "#fee8d2",
-    "--topbar-bg": settings.top_bar_bg ?? "#3b2a1a",
-    "--topbar-text": settings.top_bar_text_color ?? "#ffffff",
-    "--accent": settings.accent_color ?? "#ee7721",
-    "--accent-text": settings.accent_text_color ?? "#ffffff",
-    "--pill-bg": settings.pill_bg ?? "#fee8d2",
-    "--pill-text": settings.pill_text_color ?? "#0c5447",
-    "--pill-active-bg": settings.pill_active_bg ?? "#ee7721",
-    "--pill-active-text": settings.pill_active_text_color ?? "#ffffff",
-    "--footer-bg": settings.footer_bg ?? "#ee7721",
-    "--footer-text": settings.footer_text_color ?? "#ffffff"
+    "--page-bg": settings.page_bg ?? "#f4eadc",
+    "--header-bg": settings.header_bg ?? "#60933a",
+    "--header-text": settings.header_text_color ?? "#f4eadc",
+    "--topbar-bg": settings.top_bar_bg ?? "#d82739",
+    "--topbar-text": settings.top_bar_text_color ?? "#f4eadc",
+    "--accent": settings.accent_color ?? "#d82739",
+    "--accent-text": settings.accent_text_color ?? "#f4eadc",
+    "--pill-bg": settings.pill_bg ?? "#f4eadc",
+    "--pill-text": settings.pill_text_color ?? "#60933a",
+    "--pill-active-bg": settings.pill_active_bg ?? "#d82739",
+    "--pill-active-text": settings.pill_active_text_color ?? "#f4eadc",
+    "--footer-bg": settings.footer_bg ?? "#d82739",
+    "--footer-text": settings.footer_text_color ?? "#f4eadc"
   };
 
   return (

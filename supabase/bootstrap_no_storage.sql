@@ -477,27 +477,27 @@ values (
   'https://www.instagram.com',
   'contacto@dominio.com',
   'Encuentranos en Rappi y PedidosYa',
-  '#3b2a1a',
-  '#ffffff',
-  '#0c5447',
-  '#fee8d2',
-  '#fee8d2',
-  '#ee7721',
-  '#ffffff',
-  '#fee8d2',
-  '#0c5447',
-  '#ee7721',
-  '#ffffff',
-  '#ee7721',
-  '#ffffff'
+  '#D82739',
+  '#F4EADC',
+  '#60933a',
+  '#F4EADC',
+  '#F4EADC',
+  '#D82739',
+  '#F4EADC',
+  '#F4EADC',
+  '#60933a',
+  '#D82739',
+  '#F4EADC',
+  '#D82739',
+  '#F4EADC'
 );
 
 insert into categories (name, slug, "order", is_active, color_hex, text_color)
 values
-  ('Entradas', 'entradas', 1, true, '#ffe4b4', '#3b2a1a'),
-  ('Platos principales', 'platos-principales', 2, true, '#ffd37b', '#3b2a1a'),
-  ('Postres', 'postres', 3, true, '#ffbf9c', '#3b2a1a'),
-  ('Bebidas', 'bebidas', 4, true, '#ffdfe0', '#3b2a1a');
+  ('Entradas', 'entradas', 1, true, '#60933a', '#F4EADC'),
+  ('Platos principales', 'platos-principales', 2, true, '#D82739', '#F4EADC'),
+  ('Postres', 'postres', 3, true, '#F4EADC', '#60933a'),
+  ('Bebidas', 'bebidas', 4, true, '#F4EADC', '#D82739');
 
 insert into products (
   category_id,

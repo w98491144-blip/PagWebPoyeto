@@ -8,7 +8,7 @@
 
 body {
   @apply antialiased;
-  background-color: var(--page-bg, #f9f6f0);
+  background-color: var(--page-bg, #f4eadc);
   color: #2f2417;
 }
 
@@ -18,6 +18,79 @@ main {
 
 a {
   @apply transition-colors;
+}
+
+.site-topbar {
+  background-color: var(--topbar-bg, #d82739);
+  color: var(--topbar-text, #f4eadc);
+}
+
+.site-header-band {
+  position: relative;
+  background-color: var(--header-bg, #60933a);
+  color: var(--header-text, #f4eadc);
+}
+
+.site-header-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(520px 220px at 12% -40%, rgba(244, 234, 220, 0.28), transparent 60%),
+    radial-gradient(460px 220px at 88% 10%, rgba(244, 234, 220, 0.2), transparent 65%);
+  pointer-events: none;
+}
+
+.site-main-band {
+  position: relative;
+  background-color: var(--page-bg, #f4eadc);
+}
+
+.site-main-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(96, 147, 58, 0.08) 1px, transparent 1px),
+    radial-gradient(rgba(216, 39, 57, 0.06) 1px, transparent 1px);
+  background-size: 26px 26px, 32px 32px;
+  background-position: 0 0, 12px 12px;
+  pointer-events: none;
+}
+
+.site-footer-band {
+  position: relative;
+  background-color: var(--footer-bg, #d82739);
+  color: var(--footer-text, #f4eadc);
+}
+
+.site-footer-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 260px at 14% -50%, rgba(244, 234, 220, 0.22), transparent 70%),
+    radial-gradient(520px 240px at 86% 5%, rgba(244, 234, 220, 0.18), transparent 65%);
+  pointer-events: none;
+}
+
+.site-header-band .container-shell,
+.site-main-band .container-shell,
+.site-footer-band .container-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-ribbon {
+  height: 12px;
+  background-color: var(--header-bg, #60933a);
+  box-shadow: inset 0 1px 0 rgba(244, 234, 220, 0.45);
+}
+
+@media (min-width: 768px) {
+  .footer-ribbon {
+    height: 16px;
+  }
 }
 
 .container-shell {
@@ -42,42 +115,42 @@ a {
 
 .button {
   @apply inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold transition;
-  background-color: var(--accent, #f26a21);
-  color: var(--accent-text, #ffffff);
+  background-color: var(--accent, #d82739);
+  color: var(--accent-text, #f4eadc);
 }
 
 .button-outline {
   @apply inline-flex items-center justify-center rounded-full border px-5 py-2 text-sm font-semibold transition;
-  border-color: var(--accent, #f26a21);
-  color: var(--accent, #f26a21);
+  border-color: var(--accent, #d82739);
+  color: var(--accent, #d82739);
   background-color: transparent;
 }
 
 .button-ghost {
   @apply inline-flex items-center justify-center rounded-full border border-transparent bg-transparent px-3 py-2 text-sm font-medium transition;
-  color: var(--header-text, #3b2a1a);
+  color: var(--header-text, #f4eadc);
 }
 
 .pill {
   @apply inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold;
-  background-color: var(--pill-bg, #ffe4b4);
-  color: var(--pill-text, #3b2a1a);
+  background-color: var(--pill-bg, #f4eadc);
+  color: var(--pill-text, #60933a);
 }
 
 .pill-active {
-  background-color: var(--pill-active-bg, #f26a21);
-  color: var(--pill-active-text, #ffffff);
+  background-color: var(--pill-active-bg, #d82739);
+  color: var(--pill-active-text, #f4eadc);
 }
 
 .nav-pill {
   @apply inline-flex items-center justify-center rounded-xl px-6 py-2.5 text-base font-semibold transition;
-  background-color: var(--accent, #f26a21);
-  color: var(--accent-text, #ffffff);
+  background-color: var(--accent, #d82739);
+  color: var(--accent-text, #f4eadc);
 }
 
 .nav-link {
   @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold transition;
-  color: var(--header-text, #3b2a1a);
+  color: var(--header-text, #f4eadc);
 }
 
 .nav-dropdown {
@@ -86,8 +159,8 @@ a {
 
 .nav-dropdown-panel {
   @apply absolute left-0 top-full z-20 mt-0 hidden min-w-48 rounded-xl p-2 shadow-soft;
-  background-color: var(--accent, #f26a21);
-  color: var(--accent-text, #ffffff);
+  background-color: var(--accent, #d82739);
+  color: var(--accent-text, #f4eadc);
 }
 
 .nav-dropdown-panel-right {
@@ -96,7 +169,7 @@ a {
 
 .nav-dropdown-item {
   @apply block rounded-lg px-4 py-2 text-sm font-semibold transition;
-  color: var(--accent-text, #ffffff);
+  color: var(--accent-text, #f4eadc);
 }
 
 .nav-dropdown-item:hover,
@@ -105,6 +178,79 @@ a {
 }
 
 .nav-dropdown-item-active {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.category-hero-card {
+  @apply relative block overflow-hidden rounded-3xl border border-white/60 shadow-soft transition duration-300;
+}
+
+.category-hero-card:hover,
+.category-hero-card:focus-visible {
+  transform: translateY(-4px);
+}
+
+.category-hero-card:focus-visible {
+  outline: 2px solid rgba(244, 234, 220, 0.9);
+  outline-offset: 4px;
+}
+
+.category-hero-card-media {
+  @apply absolute inset-0 h-full w-full object-cover transition-transform duration-700;
+}
+
+.category-hero-card:hover .category-hero-card-media,
+.category-hero-card:focus-visible .category-hero-card-media {
+  transform: scale(1.05);
+}
+
+.category-hero-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    130deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
+.category-hero-card-glow {
+  position: absolute;
+  right: -3rem;
+  top: -3rem;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(244, 234, 220, 0.55) 0%,
+    rgba(244, 234, 220, 0) 70%
+  );
+  opacity: 0.9;
+}
+
+.category-hero-card-content {
+  @apply relative z-10 flex h-full flex-col justify-between px-6 py-5;
+}
+
+.category-hero-card-kicker {
+  @apply text-xs font-semibold uppercase;
+  letter-spacing: 0.28em;
+  color: rgba(244, 234, 220, 0.9);
+}
+
+.category-hero-card-title {
+  @apply text-2xl font-semibold text-white drop-shadow-sm md:text-3xl;
+}
+
+.category-hero-card-cta {
+  @apply inline-flex items-center gap-2 self-start rounded-full border border-white/50 px-4 py-1 text-xs font-semibold uppercase text-white transition;
+  letter-spacing: 0.22em;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.category-hero-card:hover .category-hero-card-cta,
+.category-hero-card:focus-visible .category-hero-card-cta {
   background-color: rgba(255, 255, 255, 0.25);
 }
 
@@ -146,7 +292,7 @@ a {
 
 .menu-item-price {
   @apply text-base font-semibold;
-  color: var(--accent, #f26a21);
+  color: var(--accent, #d82739);
 }
 
 .order-pill {
@@ -182,8 +328,8 @@ a {
 
 .order-pill-outline {
   @apply inline-flex items-center justify-center rounded-full border px-4 py-1.5 text-xs font-semibold transition;
-  border-color: var(--accent, #f26a21);
-  color: var(--accent, #f26a21);
+  border-color: var(--accent, #d82739);
+  color: var(--accent, #d82739);
   background-color: transparent;
 }
 
@@ -211,16 +357,20 @@ a {
 }
 
 .footer-link {
-  @apply text-lg leading-snug transition-colors;
+  @apply text-lg leading-snug transition-colors transition-opacity;
 }
 
 .footer-link:hover,
 .footer-link:focus-visible {
-  color: var(--accent, #ee7721);
+  color: var(--footer-text, #f4eadc);
+}
+
+.footer-link:hover {
+  opacity: 0.85;
 }
 
 .footer-link:focus-visible {
-  outline: 2px solid var(--accent, #ee7721);
+  outline: 2px solid var(--footer-text, #f4eadc);
   outline-offset: 3px;
   border-radius: 9999px;
 }
