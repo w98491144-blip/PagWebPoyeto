@@ -73,10 +73,12 @@ const getStoragePath = (url: string | null) => {
 
 const ImageUploader = ({
   value,
-  onChange
+  onChange,
+  optimize = true
 }: {
   value: string | null;
   onChange: (url: string | null) => void;
+  optimize?: boolean;
 }) => {
   const supabase = useMemo(() => createSupabaseBrowserClient(), []);
   const [uploading, setUploading] = useState(false);
@@ -87,10 +89,12 @@ const ImageUploader = ({
     setError(null);
 
     let optimizedFile = file;
-    try {
-      optimizedFile = await optimizeImage(file);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Error al optimizar imagen");
+    if (optimize) {
+      try {
+        optimizedFile = await optimizeImage(file);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Error al optimizar imagen");
+      }
     }
 
     const cleanName = optimizedFile.name.replace(/[^a-zA-Z0-9.-]/g, "-");

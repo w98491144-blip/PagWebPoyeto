@@ -16,7 +16,7 @@ export default async function HomePage() {
     <div className="space-y-8">
       {settings.hero_image_url && (
         <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen">
-          <div className="relative h-72 w-full overflow-hidden bg-white md:h-[24rem]">
+          <div className="relative w-full overflow-hidden bg-white aspect-[3/1]">
             <Image
               src={settings.hero_image_url}
               alt={settings.brand_name ?? "Portada"}

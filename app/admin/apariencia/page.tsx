@@ -270,6 +270,7 @@ export default function AdminAparienciaPage() {
             <label className="text-sm text-stone-600">Imagen portada</label>
             <ImageUploader
               value={form.hero_image_url}
+              optimize={false}
               onChange={(url) => {
                 setForm((prev) => ({ ...prev, hero_image_url: url }));
                 void persistImageField("hero_image_url", url);
